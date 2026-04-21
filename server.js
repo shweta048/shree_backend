@@ -16,7 +16,8 @@ app.use(cors());
 app.use(express.json());
 
 //IMAGE ACCESS
-app.use("/uploads", express.static("uploads"));
+// app.use("/uploads", express.static("uploads"));
+app.use("/uploads", express.static("/tmp/uploads"));
 
 // AUTH ROUTES
 app.use("/api/auth", authRoutes);
