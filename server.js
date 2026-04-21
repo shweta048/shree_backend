@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const galleryRoutes = require("./routes/galleryRoutes");
 const authRoutes = require("./routes/authRoutes");
 const newsRoutes = require("./routes/newsRoutes");
-const siteProjectRoutes = require("./routes/SiteProjectRoutes");
+const siteProjectRoutes = require("./routes/siteProjectRoutes");
 const app = express();
 
 // ================= MIDDLEWARE =================
@@ -134,7 +134,6 @@ app.delete("/api/contact/:id", async (req, res) => {
   await Contact.findByIdAndDelete(req.params.id);
   res.json({ message: "Contact Deleted" });
 });
-//PUT
 // UPDATE (PUT)
 app.put("/api/contact/:id", async (req, res) => {
   try {
