@@ -26,9 +26,9 @@ const upload = multer({ storage });
 
 // ✅ ROUTES
 router.post("/", authMiddleware, upload.single("image"), createNews);
-router.get("/", authMiddleware, getNews);
+router.get("/", getNews);
 
-router.get("/:id", authMiddleware, async (req, res) => {
+router.get("/:id", async (req, res) => {
   const News = require("../models/News");
   const news = await News.findById(req.params.id);
   res.json(news);
